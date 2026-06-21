@@ -257,17 +257,17 @@ small {
 }
 
 .cta-bar {
-  position: fixed;
-  left: 50%;
-  bottom: max(0px, calc((100vh - 874px) / 2));
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 5;
-  width: min(402px, 100vw);
   padding: 12px 20px 36px;
-  transform: translateX(-50%);
   background: #fff;
 }
 
 .cta-bar .primary {
+  display: block;
   width: 100%;
 }
 
@@ -664,13 +664,6 @@ small {
     width: 100vw;
     height: 100vh;
     box-shadow: none;
-  }
-
-  .cta-bar {
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    transform: none;
   }
 
   .home-indicator {
