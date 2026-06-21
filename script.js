@@ -1,4 +1,5 @@
-const screens = [...document.querySelectorAll(".screen")];
+const screenOrder = [3, 0, 1, 2, 4];
+const screens = screenOrder.map((index) => document.querySelector(`[data-screen="${index}"]`));
 let current = 0;
 
 function showScreen(index) {
@@ -28,4 +29,6 @@ document.addEventListener("click", (event) => {
 const hashMatch = window.location.hash.match(/screen-(\d+)/);
 if (hashMatch) {
   showScreen(Number(hashMatch[1]) - 1);
+} else {
+  showScreen(0);
 }

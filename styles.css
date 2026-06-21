@@ -255,11 +255,19 @@ small {
   font-weight: 800;
 }
 
-.primary.fixed {
+.cta-bar {
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 26px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  padding: 16px 20px 26px;
+  background: #fff;
+  border-top: 1px solid rgba(228, 230, 233, 0.8);
+}
+
+.cta-bar .primary {
+  width: 100%;
 }
 
 .hub {
