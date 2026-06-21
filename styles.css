@@ -658,6 +658,834 @@ small {
   z-index: 10;
 }
 
+/* ===== 공통: 비교 매물 카드 ===== */
+.compare-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.compare-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.compare-card .pic {
+  height: 92px;
+}
+
+.cc-body {
+  padding: 10px 12px 12px;
+}
+
+.cc-body p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.cc-body small {
+  margin-top: 3px;
+  font-size: 11.5px;
+}
+
+.cc-body.white p,
+.cc-body.white small {
+  color: #fff;
+}
+
+.deal-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 5px;
+  background: #3b4048;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.deal-badge.sm {
+  height: 19px;
+  font-size: 10px;
+}
+
+.badge.danger {
+  color: #f0584f;
+  background: #ffe2e0;
+}
+
+.badge.float {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  height: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.on-orange .compare-card .pic {
+  border-radius: 10px;
+}
+
+.on-orange .compare-card {
+  background: transparent;
+  overflow: visible;
+}
+
+.on-orange .compare-card .pic {
+  overflow: hidden;
+}
+
+.on-orange .cc-body {
+  padding: 8px 2px 0;
+}
+
+/* ===== 6. 진단 항목 확인 ===== */
+.diag-items {
+  padding-top: 12px;
+}
+
+.diag-items h2 {
+  margin: 26px 0 12px;
+}
+
+.item-list {
+  overflow: hidden;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 12px;
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.item-row:last-child {
+  border-bottom: 0;
+}
+
+.item-row .num {
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.item-row strong {
+  font-size: 15px;
+}
+
+.item-row small {
+  margin-top: 3px;
+}
+
+.pay-card {
+  margin-top: 16px;
+  padding: 18px 16px;
+}
+
+.pay-row,
+.pay-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.pay-row {
+  color: #5d646e;
+  margin-bottom: 12px;
+}
+
+.pay-row b {
+  color: var(--text);
+}
+
+.pay-total {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.pay-total b {
+  font-size: 19px;
+}
+
+.pay-note {
+  margin-top: 8px;
+  color: #8d949e;
+  font-size: 11.5px;
+}
+
+/* ===== 7. 진단 진행 중 ===== */
+.loading-body {
+  text-align: center;
+  padding-top: 14px;
+}
+
+.loading-sub {
+  color: #8d949e;
+  font-size: 14px;
+}
+
+.loading-title {
+  margin-top: 6px;
+  font-size: 23px;
+  letter-spacing: -0.6px;
+}
+
+.progress-ring {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin: 30px auto 14px;
+  border-radius: 50%;
+  background: conic-gradient(var(--orange) calc(var(--p, 43) * 1%), #efe7df 0);
+}
+
+.progress-ring::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  z-index: 1;
+}
+
+.ring-inner {
+  position: absolute;
+  inset: 21px;
+  z-index: 2;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 35%, #ff9a52, #ff6b1f);
+  font-size: 38px;
+}
+
+.progress-pct {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+.progress-bar {
+  height: 8px;
+  margin: 14px 6px 0;
+  border-radius: 4px;
+  background: #e4e6e9;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--orange);
+  transition: width 0.2s linear;
+}
+
+.eta {
+  margin-top: 12px;
+  color: #8d949e;
+  font-size: 13px;
+}
+
+.timeline {
+  margin-top: 28px;
+  padding: 8px 18px;
+  text-align: left;
+}
+
+.tl-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.tl-row:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 26px;
+  width: 2px;
+  height: 52px;
+  background: #e3e6e9;
+}
+
+.tl-row.done:not(:last-child)::before {
+  background: var(--green);
+}
+
+.tl-dot {
+  position: relative;
+  z-index: 1;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: none;
+  font-size: 12px;
+  background: #eceef0;
+  color: #9aa0a8;
+  font-weight: 700;
+}
+
+.tl-row.done .tl-dot {
+  background: var(--green);
+  color: #fff;
+}
+
+.tl-row.current .tl-dot {
+  background: #fff;
+  border: 2px solid var(--orange);
+}
+
+.tl-row.current .tl-dot::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.tl-row:not(.done):not(.current) {
+  color: #9aa0a8;
+}
+
+/* ===== 공통: 비교 표 ===== */
+.compare-ready {
+  padding-top: 12px;
+}
+
+.ready-title {
+  margin-bottom: 18px;
+  font-size: 23px;
+  letter-spacing: -0.6px;
+}
+
+.compare-table {
+  margin-top: 18px;
+  padding: 6px 14px 10px;
+}
+
+.ct-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: end;
+  padding: 14px 0 12px;
+}
+
+.ct-head span {
+  text-align: center;
+}
+
+.ct-head small {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  min-height: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.ct-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ct-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.ct-cell em {
+  font-style: normal;
+  font-size: 10.5px;
+  color: #8a919b;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.ct-row.tall {
+  min-height: 72px;
+}
+
+.face {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.face.danger {
+  background: #ffe2e0;
+  color: #f0584f;
+}
+
+.face.caution {
+  background: #fff2c4;
+  color: #f0a93a;
+}
+
+.face.safe {
+  background: var(--green-soft);
+  color: #18a541;
+}
+
+.center-note {
+  margin-top: 18px;
+  text-align: center;
+  color: #8d949e;
+  font-size: 12.5px;
+}
+
+/* ===== 9. 지킴진단 리포트 ===== */
+.report {
+  padding: 0;
+}
+
+.report-nav {
+  grid-template-columns: 40px 1fr 40px;
+}
+
+.share {
+  font-size: 20px;
+  text-align: right;
+  color: #22272d;
+}
+
+.report-top {
+  padding: 16px 20px 22px;
+}
+
+.report-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.rh-price {
+  margin: 8px 0 4px;
+  font-size: 22px;
+  letter-spacing: -0.6px;
+}
+
+.rh-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  flex: none;
+}
+
+.score-label {
+  color: #6f7782;
+  font-size: 14px;
+}
+
+.score-num {
+  margin: 2px 0 12px;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+.gauge {
+  position: relative;
+  padding-bottom: 22px;
+}
+
+.gauge-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: #eceef0;
+  overflow: hidden;
+}
+
+.gauge-bar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 58%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ffb24d, #ff6b1f);
+}
+
+.gauge-pin {
+  position: absolute;
+  top: -7px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--orange);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gauge-legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: #9aa0a8;
+  font-size: 12px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.cat-card {
+  padding: 14px 6px 12px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+
+.cat-ic {
+  font-size: 22px;
+}
+
+.cat-card strong {
+  display: block;
+  margin: 6px 0 8px;
+  font-size: 13px;
+}
+
+.cat-card .badge {
+  font-size: 10.5px;
+  padding: 0 6px;
+}
+
+.ai-pill {
+  width: max-content;
+  margin: 22px auto 12px;
+  padding: 7px 13px;
+  border-radius: 16px;
+  background: #4b6bff;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.ai-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f0f1ff;
+}
+
+.ai-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #3a4150;
+}
+
+.ai-link {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px 12px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ai-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: #fff;
+  font-size: 11px;
+  flex: none;
+}
+
+.ai-link b {
+  margin-left: auto;
+  color: #8d949e;
+  font-weight: 700;
+}
+
+.tabs {
+  display: flex;
+  gap: 18px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  padding: 14px 0;
+  color: #9aa0a8;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  flex: none;
+}
+
+.tab.active {
+  color: var(--text);
+  border-bottom-color: var(--orange);
+}
+
+.report-section {
+  padding: 22px 20px;
+  border-top: 10px solid var(--bg);
+}
+
+.report-section:first-of-type {
+  border-top: 0;
+}
+
+.rs-intro {
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+}
+
+.rs-desc {
+  margin-top: 12px;
+  color: #7a818a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.rs-title {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+.info-table {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.info-table div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+}
+
+.info-table div:last-child {
+  border-bottom: 0;
+}
+
+.info-table span {
+  color: #7a818a;
+  flex: none;
+}
+
+.info-table b {
+  text-align: right;
+}
+
+.info-box {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f5f6f8;
+  font-size: 12.5px;
+}
+
+.info-box strong {
+  font-size: 13px;
+}
+
+.info-box ul {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  color: #6f7782;
+  line-height: 1.6;
+}
+
+.right-row {
+  border-bottom: 1px solid var(--line);
+}
+
+.right-row > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 2px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 14.5px;
+}
+
+.right-row > summary::-webkit-details-marker {
+  display: none;
+}
+
+.rk {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.rv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #5d646e;
+  font-size: 14px;
+}
+
+.chev {
+  font-style: normal;
+  font-size: 18px;
+  color: #b3b8bf;
+  transition: transform 0.2s;
+}
+
+.right-row[open] .chev {
+  transform: rotate(180deg);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 7px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tag.safe {
+  color: #18a541;
+  background: var(--green-soft);
+}
+
+.tag.caution {
+  color: #e0962a;
+  background: #fff2c4;
+}
+
+.tag.danger {
+  color: #f0584f;
+  background: #ffe2e0;
+}
+
+.right-detail {
+  padding: 0 2px 16px;
+  color: #6f7782;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.right-detail strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.right-detail ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+/* ===== 10. 비교 결과 ===== */
+.result-screen {
+  background: var(--bg);
+}
+
+.result-screen .topbar {
+  color: #fff;
+}
+
+.overlay-nav {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: transparent;
+  color: #fff;
+}
+
+.overlay-nav .back {
+  color: #fff;
+}
+
+.result-hero {
+  padding: 112px 20px 24px;
+  background: var(--orange);
+  color: #fff;
+}
+
+.rec-label {
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.rec-title {
+  margin: 8px 0 22px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.32;
+  letter-spacing: -0.5px;
+}
+
+.result-body {
+  padding: 8px 20px 0;
+}
+
+.compare-table.flat {
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.compare-table.flat .ct-head small {
+  color: #6f7782;
+}
+
 @media (max-width: 430px) {
   body {
     display: block;
