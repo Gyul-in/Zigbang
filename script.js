@@ -2,6 +2,7 @@ const screenOrder = [3, 0, 1, 2, 4];
 const screens = screenOrder.map((index) => document.querySelector(`[data-screen="${index}"]`));
 const globalCta = document.querySelector("[data-global-cta]");
 const app = document.querySelector(".app");
+const ctaScreens = new Set(["3", "0"]);
 let current = 0;
 
 function syncCtaToAppFrame() {
@@ -13,13 +14,14 @@ function syncCtaToAppFrame() {
 
 function showScreen(index) {
   current = Math.max(0, Math.min(index, screens.length - 1));
+  const activeScreen = screens[current];
   screens.forEach((screen, screenIndex) => {
     screen.classList.toggle("active", screenIndex === current);
     if (screenIndex === current) {
       screen.scrollTop = 0;
     }
   });
-  globalCta.classList.toggle("hidden", current > 1);
+  globalCta.classList.toggle("hidden", !ctaScreens.has(activeScreen.dataset.screen));
   syncCtaToAppFrame();
 }
 
