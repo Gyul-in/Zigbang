@@ -46,7 +46,7 @@ button {
   inset: 0;
   display: none;
   overflow-y: auto;
-  padding-bottom: 84px;
+  padding-bottom: 112px;
   background: var(--bg);
 }
 
@@ -253,17 +253,18 @@ small {
   background: var(--orange);
   color: white;
   font-weight: 800;
+  border-radius: 0;
 }
 
 .cta-bar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  left: 50%;
+  bottom: max(0px, calc((100vh - 874px) / 2));
   z-index: 5;
-  padding: 16px 20px 26px;
+  width: min(402px, 100vw);
+  padding: 12px 20px 36px;
+  transform: translateX(-50%);
   background: #fff;
-  border-top: 1px solid rgba(228, 230, 233, 0.8);
 }
 
 .cta-bar .primary {
@@ -663,6 +664,13 @@ small {
     width: 100vw;
     height: 100vh;
     box-shadow: none;
+  }
+
+  .cta-bar {
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    transform: none;
   }
 
   .home-indicator {

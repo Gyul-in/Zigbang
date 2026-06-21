@@ -10,7 +10,6 @@ function showScreen(index) {
       screen.scrollTop = 0;
     }
   });
-  window.location.hash = `screen-${current + 1}`;
 }
 
 document.addEventListener("click", (event) => {
@@ -26,9 +25,4 @@ document.addEventListener("click", (event) => {
   }
 });
 
-const hashMatch = window.location.hash.match(/screen-(\d+)/);
-if (hashMatch) {
-  showScreen(Number(hashMatch[1]) - 1);
-} else {
-  showScreen(0);
-}
+showScreen(0);
