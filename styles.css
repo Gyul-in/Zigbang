@@ -257,11 +257,11 @@ small {
 }
 
 .cta-bar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  left: var(--app-left, 0);
+  bottom: var(--app-bottom, 0);
   z-index: 5;
+  width: var(--app-width, 100vw);
   padding: 12px 20px 36px;
   background: #fff;
 }

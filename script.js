@@ -1,7 +1,15 @@
 const screenOrder = [3, 0, 1, 2, 4];
 const screens = screenOrder.map((index) => document.querySelector(`[data-screen="${index}"]`));
 const globalCta = document.querySelector("[data-global-cta]");
+const app = document.querySelector(".app");
 let current = 0;
+
+function syncCtaToAppFrame() {
+  const rect = app.getBoundingClientRect();
+  globalCta.style.setProperty("--app-left", `${rect.left}px`);
+  globalCta.style.setProperty("--app-bottom", `${window.innerHeight - rect.bottom}px`);
+  globalCta.style.setProperty("--app-width", `${rect.width}px`);
+}
 
 function showScreen(index) {
   current = Math.max(0, Math.min(index, screens.length - 1));
@@ -12,6 +20,7 @@ function showScreen(index) {
     }
   });
   globalCta.classList.toggle("hidden", current > 1);
+  syncCtaToAppFrame();
 }
 
 document.addEventListener("click", (event) => {
@@ -26,5 +35,8 @@ document.addEventListener("click", (event) => {
     showScreen(current - 1);
   }
 });
+
+window.addEventListener("resize", syncCtaToAppFrame);
+window.addEventListener("orientationchange", syncCtaToAppFrame);
 
 showScreen(0);
