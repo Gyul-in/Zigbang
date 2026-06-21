@@ -266,6 +266,10 @@ small {
   background: #fff;
 }
 
+.cta-bar.hidden {
+  display: none;
+}
+
 .cta-bar .primary {
   display: block;
   width: 100%;

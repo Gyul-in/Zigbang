@@ -1,5 +1,6 @@
 const screenOrder = [3, 0, 1, 2, 4];
 const screens = screenOrder.map((index) => document.querySelector(`[data-screen="${index}"]`));
+const globalCta = document.querySelector("[data-global-cta]");
 let current = 0;
 
 function showScreen(index) {
@@ -10,6 +11,7 @@ function showScreen(index) {
       screen.scrollTop = 0;
     }
   });
+  globalCta.classList.toggle("hidden", current > 1);
 }
 
 document.addEventListener("click", (event) => {
