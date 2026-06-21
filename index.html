@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지킴진단 프로토타입</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="지킴진단 모바일 프로토타입">
+      <section class="screen active" data-screen="0">
+        <header class="topbar">
+          <div class="status">9:41</div>
+          <div class="icons">▮▮▮ ᯤ ▰</div>
+        </header>
+        <nav class="nav">
+          <button class="back" data-prev aria-label="이전">‹</button>
+          <strong>등기부등본 확인</strong>
+          <span></span>
+        </nav>
+
+        <div class="alert-hero">
+          <div class="alert-mark">!</div>
+          <h1>확인이 필요한 항목이 1개 있어요</h1>
+          <p>서울 마포구 망원동 · 신축빌라 · 전용 54m2</p>
+        </div>
+
+        <div class="content">
+          <h2>먼저 확인하세요</h2>
+          <article class="card danger-card">
+            <div class="card-row">
+              <span>근저당권 설정</span>
+              <span class="badge caution">☺ 주의</span>
+            </div>
+            <div class="price orange">2억 5000</div>
+            <p class="notice">
+              근저당이 있으면 집이 경매로 넘어갈 때 내 보증금보다 은행이 먼저 돈을 받아요.
+              보증금과 합쳐 집값을 넘지 않는지 확인하세요.
+            </p>
+          </article>
+
+          <h2 class="spaced">나머지 항목</h2>
+          <article class="card check-list">
+            <div class="check-row">
+              <div><strong>소유자 일치</strong><small>임대인 = 등기부상 소유자</small></div>
+              <span class="badge safe">☺ 안전</span>
+            </div>
+            <div class="check-row">
+              <div><strong>압류·가압류</strong><small>해당 없음</small></div>
+              <span class="badge safe">☺ 안전</span>
+            </div>
+            <div class="check-row">
+              <div><strong>신탁 등기</strong><small>해당 없음</small></div>
+              <span class="badge safe">☺ 안전</span>
+            </div>
+          </article>
+
+          <button class="outline-button">
+            <span>▱</span>
+            등기부등본 원문 보기
+            <span>›</span>
+          </button>
+        </div>
+        <button class="primary fixed" data-next>개별 결과 보기</button>
+      </section>
+
+      <section class="screen" data-screen="1">
+        <header class="topbar">
+          <div class="status">9:41</div>
+          <div class="icons">▮▮▮ ᯤ ▰</div>
+        </header>
+        <nav class="nav">
+          <button class="back" data-prev aria-label="이전">‹</button>
+          <strong>지킴진단</strong>
+          <span></span>
+        </nav>
+
+        <div class="content hub">
+          <h1>전세사기,<br />직방이 대신 확인해드릴게요</h1>
+          <p class="lead">찜한 매물을 불러와 집주인·시세·치안까지<br />한 번에 진단해요.</p>
+
+          <button class="hub-button orange-bg" data-next>
+            <span class="square-icon">♡</span>
+            <span><strong>찜한 매물로 진단하기</strong><small>찜 3개 · 한 번에 비교까지</small></span>
+            <b>›</b>
+          </button>
+
+          <button class="hub-button light">
+            <span class="square-icon gray">⌕</span>
+            <span><strong>찜한 매물로 진단하기</strong><small>찜 3개 · 한 번에 비교까지</small></span>
+            <b>›</b>
+          </button>
+
+          <h2 class="recent-title">최근 진단</h2>
+          <article class="recent-list">
+            <div class="recent-item">
+              <div class="thumb"></div>
+              <div>
+                <p><span class="green-chip">월세</span> <strong>1,000/85</strong></p>
+                <small>오피스텔 9평 · 12층/15층<br />서울 강남구 역삼동</small>
+              </div>
+              <span class="badge safe">☺ 안전</span>
+            </div>
+            <div class="recent-item">
+              <div class="thumb"></div>
+              <div>
+                <p><span class="green-chip">월세</span> <strong>1,000/85</strong></p>
+                <small>오피스텔 9평 · 12층/15층<br />서울 강남구 역삼동</small>
+              </div>
+              <span class="badge safe">☺ 안전</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="2">
+        <header class="topbar">
+          <div class="status">9:41</div>
+          <div class="icons">▮▮▮ ᯤ ▰</div>
+        </header>
+        <nav class="nav">
+          <button class="back" data-prev aria-label="이전">‹</button>
+          <strong>찜한 매물</strong>
+          <span></span>
+        </nav>
+
+        <div class="content list-page">
+          <div class="list-head">
+            <span>총 <b>3</b>개</span>
+            <div><button class="sort active-sort">최근순</button><button class="sort">가격순</button></div>
+          </div>
+
+          <article class="listing" data-next>
+            <div class="thumb large"></div>
+            <div>
+              <p><span class="blue-chip">전세</span> <span class="gray-chip">미진단</span></p>
+              <h3>2억 5,000</h3>
+              <small>신축빌라 · 16평 · 3층/5층<br />서울 마포구 망원동 · 망원역 도보 5분</small>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="thumb large"></div>
+            <div>
+              <p><span class="green-chip">월세</span> <span class="safe-chip">☺ 안전</span></p>
+              <h3>2억 5,000</h3>
+              <small>신축빌라 · 16평 · 3층/5층<br />서울 마포구 망원동 · 망원역 도보 5분</small>
+            </div>
+          </article>
+          <article class="listing">
+            <div class="thumb large"></div>
+            <div>
+              <p><span class="blue-chip">전세</span> <span class="safe-chip">☺ 안전</span></p>
+              <h3>2억 5,000</h3>
+              <small>신축빌라 · 16평 · 3층/5층<br />서울 마포구 망원동 · 망원역 도보 5분</small>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen detail" data-screen="3">
+        <header class="topbar overlay">
+          <div class="status">9:41</div>
+          <div class="icons">▮▮▮ ᯤ ▰</div>
+        </header>
+        <div class="photo-hero">
+          <span>1 / 24</span>
+        </div>
+
+        <div class="detail-body">
+          <h1>전세 2억 5,0000</h1>
+          <p class="meta">신축빌라 · 16평 · 3층/5층 · 전용 54m2</p>
+          <p class="addr">서울 마포구 망원동 · 망원역 도보 5분</p>
+          <div class="tags"><span>#즉시입주</span><span>#신축</span><span>#반려동물</span></div>
+
+          <section class="info-section">
+            <h2>이 집, 안전한가요?</h2>
+            <p>등기부등본을 떼서 소유자와 빚을 직방이 대신 확인해드려요.</p>
+            <article class="mini-table">
+              <div><strong>소유자 일치</strong><span class="badge safe">☺ 안전</span></div>
+              <div><strong>근저당 1억 2,000만원</strong><span class="badge caution">☺ 주의</span></div>
+              <div><strong>압류·가압류 없음</strong><span class="badge safe">☺ 안전</span></div>
+            </article>
+            <button class="text-link" data-next>등기부등본 전체 확인하기 <span>›</span></button>
+          </section>
+
+          <section class="chat-card">
+            <div class="chat-illust">💬</div>
+            <strong>우리 아파트 채팅방<br /><span>인증하고 정보 나누자!</span></strong>
+            <button>입장하기</button>
+          </section>
+
+          <section class="price-section">
+            <h2>시세 정보</h2>
+            <div class="sale-row">
+              <div>
+                <strong>매매 23억 4,000</strong>
+                <p>33C/25평 · 105동 고층<br />84타입 남향. 전망 최고 로얄층</p>
+              </div>
+              <div class="mini-photo"></div>
+            </div>
+            <div class="sale-row">
+              <div>
+                <strong>매매 23억 4,000</strong>
+                <p>33C/25평 · 105동 고층<br />84타입 남향. 전망 최고 로얄층</p>
+              </div>
+              <div class="mini-photo"></div>
+            </div>
+          </section>
+        </div>
+        <button class="primary fixed" data-next>개별 결과 보기</button>
+      </section>
+
+      <section class="screen" data-screen="4">
+        <header class="topbar">
+          <div class="status">9:41</div>
+          <div class="icons">▮▮▮ ᯤ ▰</div>
+        </header>
+        <nav class="nav">
+          <button class="back" data-prev aria-label="이전">‹</button>
+          <strong>찜한 매물</strong>
+          <span></span>
+        </nav>
+
+        <div class="content list-page select-page">
+          <p class="selected"><b>2</b>/2 선택됨</p>
+
+          <article class="listing selected-card">
+            <div class="thumb large"></div>
+            <div>
+              <p><span class="blue-chip">전세</span> <span class="gray-chip">미진단</span></p>
+              <h3>2억 5,000</h3>
+              <small>신축빌라 · 16평 · 3층/5층<br />서울 마포구 망원동 · 망원역 도보 5분</small>
+            </div>
+            <span class="check-dot">✓</span>
+          </article>
+          <article class="listing selected-card">
+            <div class="thumb large"></div>
+            <div>
+              <p><span class="green-chip">월세</span> <span class="safe-chip">☺ 안전</span></p>
+              <h3>2억 5,000</h3>
+              <small>신축빌라 · 16평 · 3층/5층<br />서울 마포구 망원동 · 망원역 도보 5분</small>
+            </div>
+            <span class="check-dot">✓</span>
+          </article>
+          <article class="listing">
+            <div class="thumb large"></div>
+            <div>
+              <p><span class="blue-chip">전세</span> <span class="safe-chip">☺ 안전</span></p>
+              <h3>2억 5,000</h3>
+              <small>신축빌라 · 16평 · 3층/5층<br />서울 마포구 망원동 · 망원역 도보 5분</small>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <div class="home-indicator"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

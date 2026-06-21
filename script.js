@@ -1,0 +1,31 @@
+const screens = [...document.querySelectorAll(".screen")];
+let current = 0;
+
+function showScreen(index) {
+  current = Math.max(0, Math.min(index, screens.length - 1));
+  screens.forEach((screen, screenIndex) => {
+    screen.classList.toggle("active", screenIndex === current);
+    if (screenIndex === current) {
+      screen.scrollTop = 0;
+    }
+  });
+  window.location.hash = `screen-${current + 1}`;
+}
+
+document.addEventListener("click", (event) => {
+  const next = event.target.closest("[data-next]");
+  const prev = event.target.closest("[data-prev]");
+
+  if (next) {
+    showScreen(current + 1);
+  }
+
+  if (prev) {
+    showScreen(current - 1);
+  }
+});
+
+const hashMatch = window.location.hash.match(/screen-(\d+)/);
+if (hashMatch) {
+  showScreen(Number(hashMatch[1]) - 1);
+}
